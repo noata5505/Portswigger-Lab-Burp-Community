@@ -51,7 +51,7 @@ The database contains a `users` table with `username` and `password` columns. Th
 
 7. Repeat the process for each character position of the password until the entire password is recovered.
 
-8. Because manually testing every character is time-consuming, I used a small Python brute-force tool to automate the process.
+8. Because manually testing every character is time-consuming, I used a small Python [brute-force tool](https://github.com/noata5505/Portswigger-Lab-Burp-Community/blob/main/SQL-Injection/Tools/11_Bruteforce_Tool.py) to automate the process.
 
 9. Run the tool and enter:
 
