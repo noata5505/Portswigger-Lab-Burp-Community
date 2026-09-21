@@ -22,7 +22,7 @@ To solve the lab, log in as the administrator user.
 2. Di *Repeater*. Cookie adalah tempat kita injeksi payload. Coba injeksi dengan payload `' AND '1'='1` di samping value variable **TrackingId**
 dan pastikan respon memberikan tanda *Welcome back!*. Coba juga menngunakan `' AND '1'='2` dan periksa respone. Dengan hal ini kita dapat memastikan bahwa ada kerentanan **Blind SQLi**.
 3. Karena sudah di beri tau table dan kolomnya, kita bisa langsung injeksi menggunakan `' AND (SELECT SUBSTRING(password, 1, 1) FROM users WHERE username='administrator')='a` sudah di pastikan respon tidak akan mengirimkan *Welcome back!* atau mungkin benar jika huruf awal password berawalan **a**.
-4. Di sini kita perlu menggunakan teknik **Brute Force**. Di karenakan *Burpsuite intruder (community)* cukup lambat, saya akan menggunakan (tool)[https://github.com/noata5505/Portswigger-Lab-Burp-Community/blob/main/SQL-Injection/11_Bruteforce_Tool.py] yang saya buat sendiri.
+4. Di sini kita perlu menggunakan teknik **Brute Force**. Di karenakan *Burpsuite intruder (community)* cukup lambat, saya akan menggunakan [tool](https://github.com/noata5505/Portswigger-Lab-Burp-Community/blob/main/SQL-Injection/11_Bruteforce_Tool.py) yang saya buat sendiri.
 
 
 ---
