@@ -23,6 +23,14 @@ To solve the lab, log in as the administrator user.
 dan pastikan respon memberikan tanda *Welcome back!*. Coba juga menngunakan `' AND '1'='2` dan periksa respone. Dengan hal ini kita dapat memastikan bahwa ada kerentanan **Blind SQLi**.
 3. Karena sudah di beri tau table dan kolomnya, kita bisa langsung injeksi menggunakan `' AND (SELECT SUBSTRING(password, 1, 1) FROM users WHERE username='administrator')='a` sudah di pastikan respon tidak akan mengirimkan *Welcome back!* atau mungkin benar jika huruf awal password berawalan **a**.
 4. Di sini kita perlu menggunakan teknik **Brute Force**. Di karenakan *Burpsuite intruder (community)* cukup lambat, saya akan menggunakan [tool](https://github.com/noata5505/Portswigger-Lab-Burp-Community/blob/main/SQL-Injection/11_Bruteforce_Tool.py) yang saya buat sendiri.
+5. Cara menggunakan tool-nya:
+   - Jalankan tool-nya.
+   - Masukan **URL** `https://(YOUR-ID).web-security-academy.net/`
+   - Masukan payload **Cookie** `(YOUR-COOKIE)' AND (SELECT SUBSTRING(password, {i}, 1) FROM users WHERE username='administrator')='{char}`
+6. Tunggu sampai selesai, copy password **administrator** dan login di halaman **My account**.
+7. Selesai. Banner **LAB SOLVE** akan muncul.
+
+<img width="1900" height="901" alt="Screenshot 2026-09-21 214244" src="https://github.com/user-attachments/assets/a22564d5-5c8b-485c-9f4b-0c5202f2a4e7" />
 
 
 ---
