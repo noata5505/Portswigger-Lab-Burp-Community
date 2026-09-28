@@ -26,7 +26,7 @@ To keep things from getting messy, I've organized the notes based on the vulnera
 
 ## 🚀 Progress Tracker
 Just to see how far I've come, here's a quick checklist that I'll keep updating as I conquer new topics:
-- [*] SQL Injection
+- [X] SQL Injection
 - [ ] Cross-Site Scripting (XSS)
 - [ ] CSRF
 - [ ] SSRF
